@@ -38,5 +38,7 @@ run_analysis <- function()
   tidyData = aggregate(combinedData[, 3:length(colnames(combinedData))], by=list(activity = combinedData$activity, subject=combinedData$subject), mean)
   
   # Export results
-  write.table(tidyData, "tidy.txt", sep="\t")
+  write.table(tidyData, "tidy.txt", sep="\t", row.name=FALSE)
+  
+  tidyData
 }
